@@ -19,12 +19,15 @@ const userSchema = new mongoose.Schema({
     bookings:{
         type: Array,
         default: [],
-    }
+    },
+    city:{
+        type: String,
+        required: true,
+    } 
 },{
     timestamps: true
 })
 
-//for hashing password
 userSchema.pre('save', async function (next) {
     const user = this;
 
@@ -34,7 +37,6 @@ userSchema.pre('save', async function (next) {
 
     next();
 });
-
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;
