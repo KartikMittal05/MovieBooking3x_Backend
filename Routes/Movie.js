@@ -272,7 +272,7 @@ router.get('/screensbycity/:city', async (req, res, next) => {
 
 router.get('/screensbymovieschedule/:city/:date/:movieid', async (req, res, next) => {
     try {
-        const city = req.params.city.toLowerCase();
+        const city = req.params.city;
         const date = req.params.date;
         const movieId = req.params.movieid;
 
