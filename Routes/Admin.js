@@ -1,3 +1,4 @@
+// adminRoutes.js
 
 const express = require('express');
 const router = express.Router();
@@ -33,7 +34,8 @@ router.post('/register', async (req, res, next) => {
         const newAdmin = new Admin({
             name,
             email,
-            password
+            password,
+            city
         });
 
         await newAdmin.save(); // Await the save operation
